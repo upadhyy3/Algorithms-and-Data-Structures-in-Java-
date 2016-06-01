@@ -8,10 +8,7 @@ public class ArithmaticExpressionTargetValue {
 	Map<Integer,String> map = new HashMap<Integer,String>();
 	public static String findArithmaticExpression(int[] nums,int target){
 		
-		String result = "";
 		String operators = "+-/*";
-		int first =0;
-		int second = 0;
 //		Queue<>
 		for(int i=0;i<nums.length;i++){
 			for(int j=i+1;j<nums.length;j++){

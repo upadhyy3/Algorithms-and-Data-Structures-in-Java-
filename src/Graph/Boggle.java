@@ -18,6 +18,7 @@ public class Boggle {
 						result.add(current);
 						break;
 					}
+					visited = new boolean[boggle.length][boggle[0].length];
 				}
 			}
 
@@ -37,20 +38,20 @@ public class Boggle {
 			visited[row][col] = true;
 			System.out.println(current.substring(0, currentIndex));
 			if (isWord(current, boggle, row - 1, col, currentIndex + 1, visited)
-					|| isWord(current, boggle, row - 1, col - 1,
-							currentIndex + 1, visited)
-					|| isWord(current, boggle, row - 1, col + 1,
-							currentIndex + 1, visited)
+					/*|| isWord(current, boggle, row - 1, col - 1,
+							currentIndex + 1, visited)*/
+					/*|| isWord(current, boggle, row - 1, col + 1,
+							currentIndex + 1, visited)*/
 					|| isWord(current, boggle, row, col - 1, currentIndex + 1,
 							visited)
 					|| isWord(current, boggle, row, col + 1, currentIndex + 1,
 							visited)
-					|| isWord(current, boggle, row + 1, col - 1,
-							currentIndex + 1, visited)
+					/*|| isWord(current, boggle, row + 1, col - 1,
+							currentIndex + 1, visited)*/
 					|| isWord(current, boggle, row + 1, col, currentIndex + 1,
 							visited)
-					|| isWord(current, boggle, row + 1, col + 1,
-							currentIndex + 1, visited)) {
+					/*|| isWord(current, boggle, row + 1, col + 1,
+							currentIndex + 1, visited)*/) {
 
 				return true;
 			} else {
@@ -64,9 +65,8 @@ public class Boggle {
 	}
 
 	public static void main(String[] args) {
-		char boggle[][] = { { 'G', 'I', 'Z' }, { 'U', 'E', 'K' },
-				{ 'Q', 'S', 'E' } };
-		String dictionary[] = { "GEEKS", "FOR", "QUIZ", "GO" };
+		char boggle[][] = { {'a','b'},{'a','a' } };
+		String dictionary[] = { "aaba"};
 		System.out.println(findWords(dictionary, boggle).toString());
 	}
 }

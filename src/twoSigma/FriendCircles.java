@@ -1,4 +1,4 @@
-package puzzles;
+package twoSigma;
 
     
 public class FriendCircles{
